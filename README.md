@@ -42,3 +42,28 @@ gem 'sassc-rails', '>= 2.1.0'
 
 application.css -> application.scss
 application.js -> application.coffee
+
+
+# CRUD for Post
+
+
+
+# one to many: comment to post
+
+rails g model comment body:text post:references
+
+app-name/app/models/comment.rb
+class Comment < ApplicationRecord
+  belongs_to :post
+end
+
+app-name/app/models/post.rb
+class Post < ApplicationRecord
+  has_many :comments
+end
+
+rake db:migrate
+
+
+
+
