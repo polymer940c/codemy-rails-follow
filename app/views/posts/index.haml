@@ -1,5 +1,5 @@
-- @posts.each do |post|
-  %h2= post.title
-  %p= post.body
-  %p= post.created_at
-  %hr/
+.row
+  - @posts.each do |post|
+    .col-12
+      = render post
+    %hr/

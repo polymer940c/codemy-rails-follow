@@ -17,6 +17,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'haml', '~> 5.1', '>= 5.1.2'
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sassc-rails', '>= 2.1'
 
 group :development, :test do
 
