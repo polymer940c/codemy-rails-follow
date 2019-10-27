@@ -1,4 +1,6 @@
 .row
+  .action.col-12
+    = link_to "New Post", new_post_path
   - @posts.each do |post|
     .col-12
       = render post
