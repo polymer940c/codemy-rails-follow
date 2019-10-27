@@ -1,0 +1,10 @@
+= form_for @post do |f|
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label :body
+    = f.text_area :body, class: 'form-control'
+  .form-group
+    = f.submit "Save", class: 'btn btn-block btn-success'
+
