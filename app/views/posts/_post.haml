@@ -2,8 +2,5 @@
   %h2= link_to post.title, post_path(post)
   %p= post.body
   %p= post.created_at
+  %p= pluralize(post.comments.length, 'Comment')
 
-  - post.comments.each do |comment|
-    .panel.panel-default
-      .panel-body
-        = comment.body

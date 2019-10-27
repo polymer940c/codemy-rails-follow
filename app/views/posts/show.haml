@@ -4,3 +4,19 @@
     %p= @post.body
     %p= @post.created_at
     %p= @post.updated_at
+    %hr/
+    - if @post.comments.length > 0
+      .panel.panel-default
+        .panel-body
+          - @post.comments.each do |comment|
+            %p
+              = comment.body
+              %span= comment.created_at
+    %hr/
+    %p new comment
+    = form_for [@post, @post.comments.new] do |f|
+      .for-group
+        = f.text_area :body, class: 'form-control'
+
+      .action
+        = f.submit "Save", class: 'btn btn-success'

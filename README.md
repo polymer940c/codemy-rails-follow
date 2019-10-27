@@ -65,5 +65,10 @@ end
 rake db:migrate
 
 
+# routes for comments
+
+app-name/config/routes.rb
+comments is nested inside posts
 
 
+rails g controller comments
