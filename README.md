@@ -72,3 +72,28 @@ comments is nested inside posts
 
 
 rails g controller comments
+
+
+# many to many relationship 
+a post  can have        many tags 
+a tag   can belongs-to  many posts
+create a join table (tagging) 
+  - belongs to tag
+  - belongs to post
+
+add these two lines to each of the model( post + tag )
+model/tag.rb
+has_many :taggings
+has_many :posts, through: :taggings 
+model/post.rb
+has_many :taggings
+has_many :tags, through: :taggings 
+
+you want to be able to get all posts that uses a tag
+you wnat to be able to get all tags form a post
+
+rails g model tag name:string
+rails g model tagging post:references tag:references
+
+
+

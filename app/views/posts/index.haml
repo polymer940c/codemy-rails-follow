@@ -4,6 +4,9 @@
   - @posts.each do |post|
     .col-12
       = render post
+      %p.tags
+        - post.tags.each do |tag| 
+          %span.badge.badge-info= tag.name
       = link_to "edit", edit_post_path(post)
       = link_to "delete", post_path(post), method: :delete
     %hr/
